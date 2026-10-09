@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZenFlow | Daily Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h2 class="logo">✦ ZenFlow</h2>
+      <p class="muted">YOUR WORKSPACE</p>
+      <nav>
+        <a class="active" href="#dashboard">▦ Dashboard</a>
+        <a href="#tasks">✓ My Tasks</a>
+        <a href="#progress">◷ Progress</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="avatar">Z</div>
+        <div><strong>My Workspace</strong><p class="muted">Personal planner</p></div>
+      </div>
+    </aside>
+
+    <main class="main" id="dashboard">
+      <header>
+        <div>
+          <p class="muted" id="today"></p>
+          <h1>Make today count<span class="accent">.</span></h1>
+          <p class="muted">Small steps. Big progress.</p>
+        </div>
+        <div class="date-badge">✦ Stay focused</div>
+      </header>
+
+      <section class="stats">
+        <article class="stat">
+          <span class="muted">TOTAL TASKS</span>
+          <h2 id="total">0</h2>
+          <p>All your activities</p>
+        </article>
+        <article class="stat">
+          <span class="muted">COMPLETED</span>
+          <h2 id="completed">0</h2>
+          <p>Tasks finished</p>
+        </article>
+        <article class="stat">
+          <span class="muted">REMAINING</span>
+          <h2 id="remaining">0</h2>
+          <p>Keep moving forward</p>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <div class="panel" id="tasks">
+          <div class="panel-heading">
+            <div><h2>My Tasks</h2><p class="muted">Organize your day</p></div>
+            <span class="task-icon">✎</span>
+          </div>
+
+          <form id="taskForm">
+            <input id="taskInput" type="text"
+              placeholder="What do you need to do?" maxlength="100" required>
+            <select id="priority" aria-label="Task priority">
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+              <option value="Low">Low</option>
+            </select>
+            <button type="submit">+ Add</button>
+          </form>
+
+          <div class="filters">
+            <button class="filter active" data-filter="all">All</button>
+            <button class="filter" data-filter="pending">Pending</button>
+            <button class="filter" data-filter="completed">Completed</button>
+          </div>
+
+          <ul id="taskList"></ul>
+          <p id="emptyMessage" class="empty">No tasks here. Add your first task!</p>
+        </div>
+
+        <div class="right-column">
+          <section class="panel" id="progress">
+            <h2>Daily Progress</h2>
+            <p class="muted">Every task moves you forward.</p>
+            <div class="progress-circle" id="progressCircle">
+              <div class="circle-inner">
+                <strong id="percent">0%</strong>
+                <span class="muted">completed</span>
+              </div>
+            </div>
+            <p id="progressText" class="progress-text">Let's get started!</p>
+          </section>
+
+          <section class="quote-card">
+            <span>✦ A LITTLE REMINDER</span>
+            <h3>"Progress, not perfection."</h3>
+            <p>Focus on one thing at a time. You've got this.</p>
+          </section>
+        </div>
+      </section>
+      <footer>Made with focus & creativity ✦ ZenFlow</footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
